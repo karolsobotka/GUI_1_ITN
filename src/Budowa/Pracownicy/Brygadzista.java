@@ -30,5 +30,37 @@ public class Brygadzista extends Kopacz {
         return true;
     }
 
+    @Override
+    public int pobierzPensje() {
+        return 6500;
+    }
 
+    @Override
+    public void powiedzIleRazyKopales() {
+        super.powiedzIleRazyKopales();
+    }
+
+    @Override
+    public void powiedzCoRobisz() {
+        System.out.println("pilnuje zeby sie nie lenili i kopie dolki");
+    }
+
+    @Override
+    public void zakonczDzialanie() {
+        super.zakonczDzialanie();
+    }
+
+    @Override
+    public void dodajSieDoBrygady(Brygada brygada) {
+        super.dodajSieDoBrygady(brygada);
+    }
+
+    @Override
+    public String toString() {
+        return super.toString()+" Brygadzista{" +
+                "pseudonim='" + pseudonim + '\'' +
+                ", dlugoscZmiany=" + dlugoscZmiany +
+                ", brygada=" + brygada +
+                '}';
+    }
 }

@@ -16,17 +16,17 @@ public class Architekt extends Osoba implements IPracownik {
 
     @Override
     public int pobierzPensje() {
-        return 0;
+        return 6000;
     }
 
     @Override
     public void powiedzIleRazyKopales() {
-
+        System.out.println("jestem ARCHITEKTEM.... ONI NIE KOPIA");
     }
 
     @Override
     public void powiedzCoRobisz() {
-
+        System.out.println("Rysuje rysunki i plany budowy.");
     }
 
     @Override
@@ -35,8 +35,14 @@ public class Architekt extends Osoba implements IPracownik {
     }
 
     @Override
-    public void dodajSieDoBrygady() {
-
+    public void dodajSieDoBrygady(Brygada brygada) {
+        brygada.dodajPracownika(this);
     }
 
+    @Override
+    public String toString() {
+        return super.toString()+" Architekt{" +
+                "specjalizacja='" + specjalizacja + '\'' +
+                '}';
     }
+}

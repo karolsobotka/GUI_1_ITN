@@ -89,9 +89,10 @@ public abstract class Osoba implements Comparable<Osoba>{
                 ", nazwisko='" + nazwisko + '\'' +
                 ", pesel=" + pesel +
                 ", nrTelefonu=" + nrTelefonu +
-                '}';
+                " zawod: ";
     }
 
+    // COMPRARABLE -> COMPARETO
     @Override
     public int compareTo(Osoba o) {
         if(this.getPesel() == o.getPesel()){

@@ -1,35 +1,67 @@
 package Budowa.Pracownicy;
 
 import Budowa.Exceptions.NieunikalnyPeselException;
+import Budowa.Exceptions.ZlamanaLopataException;
 import Budowa.IPracownik;
+
 public class Kopacz extends Osoba implements IPracownik {
 
     private int iloscMachniecLopata;
+    private Thread kopanieThread;
     private boolean czyZdolnyDoPracy = true;
     public Kopacz(String imie, String nazwisko, int pesel, int nrTelefonu, double waga) throws NieunikalnyPeselException {
         super(imie, nazwisko, pesel, nrTelefonu, waga);
     }
 
-    public void kop(){
+    // LAMBDA
+    Runnable runnable = () -> {
+        while(czyZdolnyDoPracy){
+
+                for(int i = 0; i<15; i++){
+                    System.out.println("Kopacz "+this.getImie()+" "+this.getNazwisko()+" machnal lopata "+iloscMachniecLopata+" razy");
+                    iloscMachniecLopata = (int) (Math.random() * 10) +5;
+                    try {
+                        kopanieThread.sleep((int) (Math.random() * 1000) );
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+                czyZdolnyDoPracy = false;
+            try {
+                throw new ZlamanaLopataException("Lopata zuzyla sie i pekla");
+            } catch (ZlamanaLopataException e) {
+                e.printStackTrace();
+            }
+        }
+    };
+
+    public synchronized void kop(){
+        kopanieThread = new Thread(runnable);
+
+        kopanieThread.start();
+
 
     }
+
     public void przestanKopac(){
-        this.czyZdolnyDoPracy =false;
+       if(kopanieThread.isAlive()){
+           kopanieThread.interrupt();
+       }
     }
 
     @Override
     public int pobierzPensje() {
-        return 0;
+        return 4500;
     }
 
     @Override
     public void powiedzIleRazyKopales() {
-
+        System.out.println("Czesc, kopalem "+iloscMachniecLopata+ " razy.");
     }
 
     @Override
     public void powiedzCoRobisz() {
-
+        System.out.println("A kopie dolki i pale szlugi");
     }
 
     @Override
@@ -38,8 +70,8 @@ public class Kopacz extends Osoba implements IPracownik {
     }
 
     @Override
-    public void dodajSieDoBrygady() {
-
+    public void dodajSieDoBrygady(Brygada brygada) {
+        brygada.dodajPracownika(this);
     }
 
     public int getIloscMachniecLopata() {
@@ -59,4 +91,11 @@ public class Kopacz extends Osoba implements IPracownik {
     }
 
 
+    @Override
+    public String toString() {
+        return super.toString()+"Kopacz{" +
+                "iloscMachniecLopata=" + iloscMachniecLopata +
+                ", czyZdolnyDoPracy=" + czyZdolnyDoPracy +
+                '}';
+    }
 }

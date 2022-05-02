@@ -4,32 +4,91 @@ import java.util.ArrayList;
 
 public class Brygada {
     private Brygadzista brygadzista;
-    private static ArrayList<Osoba> pracownicy = new ArrayList<>();
+    private ArrayList<Osoba> pracownicy;
     private int maksymalnaIloscPracownikow;
     private int iloscMachniecLopataBrygady;
 
-    public Brygada(Brygadzista brygadzista, ArrayList<Osoba> pracownicy, int maksymalnaIloscPracownikow, int iloscMachniecLopataBrygady) {
+    public Brygada(Brygadzista brygadzista, ArrayList<Osoba> pracownicy, int maksymalnaIloscPracownikow) {
         this.brygadzista = brygadzista;
         this.pracownicy = pracownicy;
         this.maksymalnaIloscPracownikow = maksymalnaIloscPracownikow;
-        this.iloscMachniecLopataBrygady = iloscMachniecLopataBrygady;
     }
 
     public int ileArchitektow(){
-        return 0;
+        int i= 0;
+        for (Osoba o : pracownicy) {
+            if(o instanceof Architekt){
+                i++;
+            }
+        }
+        return i;
+
     }
 
     public boolean czyPelnaBrygada(){
-        return  true;
+        if(this.maksymalnaIloscPracownikow == this.pracownicy.size())
+            return true;
+        else
+            return false;
     }
-    public void dodajPracownika(){
-
+    public void dodajPracownika(Osoba o){
+        if(czyPelnaBrygada()){
+            System.out.println("Za duzo pracownikow, nie mozna dodac");
+        }
+        else
+            pracownicy.add(o);
     }
-    public void dodajPracownikow(){
 
+    public void dodajPracownikow(ArrayList<Osoba> listaPracownikow){
+        if(czyPelnaBrygada()){
+            System.out.println("Za duzo pracownikow, nie mozna dodac");
+        }
+        else if(( this.pracownicy.size()+ listaPracownikow.size()) <= maksymalnaIloscPracownikow){
+            for (Osoba o : listaPracownikow){
+                this.pracownicy.add(o);
+            }
+        }
     }
 
     public void setBrygadzista(Brygadzista brygadzista) {
         this.brygadzista = brygadzista;
+    }
+
+    public Brygadzista getBrygadzista() {
+        return brygadzista;
+    }
+
+    public ArrayList<Osoba> getPracownicy() {
+        return pracownicy;
+    }
+
+    public void setPracownicy(ArrayList<Osoba> pracownicy) {
+        this.pracownicy = pracownicy;
+    }
+
+    public int getMaksymalnaIloscPracownikow() {
+        return maksymalnaIloscPracownikow;
+    }
+
+    public void setMaksymalnaIloscPracownikow(int maksymalnaIloscPracownikow) {
+        this.maksymalnaIloscPracownikow = maksymalnaIloscPracownikow;
+    }
+
+    public int getIloscMachniecLopataBrygady() {
+        return iloscMachniecLopataBrygady;
+    }
+
+    public void setIloscMachniecLopataBrygady(int iloscMachniecLopataBrygady) {
+        this.iloscMachniecLopataBrygady = iloscMachniecLopataBrygady;
+    }
+
+    @Override
+    public String toString() {
+        return "Brygada{" +
+                "brygadzista=" + brygadzista +
+                ", pracownicy=" + pracownicy +
+                ", maksymalnaIloscPracownikow=" + maksymalnaIloscPracownikow +
+                ", iloscMachniecLopataBrygady=" + iloscMachniecLopataBrygady +
+                '}';
     }
 }
