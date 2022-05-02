@@ -4,8 +4,6 @@ package Budowa.Pracownicy;
 import Budowa.Exceptions.NieunikalnyPeselException;
 
 import java.util.ArrayList;
-import java.util.Collections;
-
 public abstract class Osoba implements Comparable<Osoba>{
     private String imie;
     private String nazwisko;

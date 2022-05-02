@@ -3,10 +3,11 @@ package Budowa.Pracownicy;
 import java.util.ArrayList;
 
 public class Brygada {
-    private Brygadzista brygadzista;
-    private ArrayList<Osoba> pracownicy;
-    private int maksymalnaIloscPracownikow;
-    private int iloscMachniecLopataBrygady;
+    private static Brygadzista brygadzista;
+    private static ArrayList<Osoba> pracownicy;
+    private static int maksymalnaIloscPracownikow;
+    public static int iloscMachniecLopataBrygady;
+
 
     public Brygada(Brygadzista brygadzista, ArrayList<Osoba> pracownicy, int maksymalnaIloscPracownikow) {
         this.brygadzista = brygadzista;
@@ -58,7 +59,7 @@ public class Brygada {
         return brygadzista;
     }
 
-    public ArrayList<Osoba> getPracownicy() {
+    public static ArrayList<Osoba> getPracownicy() {
         return pracownicy;
     }
 
@@ -66,7 +67,7 @@ public class Brygada {
         this.pracownicy = pracownicy;
     }
 
-    public int getMaksymalnaIloscPracownikow() {
+    public static int getMaksymalnaIloscPracownikow() {
         return maksymalnaIloscPracownikow;
     }
 
@@ -74,7 +75,7 @@ public class Brygada {
         this.maksymalnaIloscPracownikow = maksymalnaIloscPracownikow;
     }
 
-    public int getIloscMachniecLopataBrygady() {
+    public static int getIloscMachniecLopataBrygady() {
         return iloscMachniecLopataBrygady;
     }
 

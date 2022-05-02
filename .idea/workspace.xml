@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="45f18398-32a2-4489-b234-1d9ab4f1b38d" name="Changes" comment="PESEL verification completed.">
+    <list default="true" id="45f18398-32a2-4489-b234-1d9ab4f1b38d" name="Changes" comment="Created Lambda and implemented basic thred functionality.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Budowa/Exceptions/ZlamanaLopataException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Budowa/Exceptions/ZlamanaLopataException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Budowa/IPracownik.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Budowa/IPracownik.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Budowa/Exceptions/BrygadaNiezdolnaDoPracyException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Budowa/Exceptions/BrygadaNiezdolnaDoPracyException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Budowa/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Budowa/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Budowa/Pracownicy/Architekt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Budowa/Pracownicy/Architekt.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Budowa/Pracownicy/Brygada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Budowa/Pracownicy/Brygada.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Budowa/Pracownicy/Brygadzista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Budowa/Pracownicy/Brygadzista.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Budowa/Pracownicy/Kopacz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Budowa/Pracownicy/Kopacz.java" afterDir="false" />
@@ -83,7 +81,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1651487102276</updated>
-      <workItem from="1651487103622" duration="15031000" />
+      <workItem from="1651487103622" duration="17882000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit.">
       <created>1651489138336</created>
@@ -99,7 +97,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651496466091</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Created Lambda and implemented basic thred functionality.">
+      <created>1651506389312</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1651506389312</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -119,6 +124,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit." />
     <MESSAGE value="PESEL verification completed." />
-    <option name="LAST_COMMIT_MESSAGE" value="PESEL verification completed." />
+    <MESSAGE value="Created Lambda and implemented basic thred functionality." />
+    <option name="LAST_COMMIT_MESSAGE" value="Created Lambda and implemented basic thred functionality." />
   </component>
 </project>

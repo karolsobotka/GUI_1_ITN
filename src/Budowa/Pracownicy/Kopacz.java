@@ -15,16 +15,30 @@ public class Kopacz extends Osoba implements IPracownik {
 
     // LAMBDA
     Runnable runnable = () -> {
+
         while(czyZdolnyDoPracy){
 
                 for(int i = 0; i<15; i++){
-                    System.out.println("Kopacz "+this.getImie()+" "+this.getNazwisko()+" machnal lopata "+iloscMachniecLopata+" razy");
-                    iloscMachniecLopata = (int) (Math.random() * 10) +5;
-                    try {
-                        kopanieThread.sleep((int) (Math.random() * 1000) );
-                    } catch (InterruptedException e) {
-                        throw new RuntimeException(e);
+                    if (Math.random() > 0.99) {
+                        try {
+                            czyZdolnyDoPracy = false;
+                            throw new ZlamanaLopataException("Lopata byla wadliwa i zlamala sie niespodziewanie w trakcie uzytkownia");
+                        } catch (ZlamanaLopataException e) {
+                            System.out.println(e.getMessage());
+                        }
+                    }else {
+                        iloscMachniecLopata = (int) (Math.random() * 10) +5;
+                        System.out.println("Kopacz "+this.getImie()+" "+this.getNazwisko()+" machnal lopata "+iloscMachniecLopata+" razy");
+                        Brygada.iloscMachniecLopataBrygady++;
+                        System.out.println("Brygada kopala juz tyle razy: "+Brygada.iloscMachniecLopataBrygady);
+                        try {
+                            kopanieThread.sleep( (int) (Math.random() * 1000) );
+                        } catch (InterruptedException e) {
+                            throw new RuntimeException(e);
+                        }
+
                     }
+
                 }
                 czyZdolnyDoPracy = false;
             try {
@@ -44,9 +58,7 @@ public class Kopacz extends Osoba implements IPracownik {
     }
 
     public void przestanKopac(){
-       if(kopanieThread.isAlive()){
-           kopanieThread.interrupt();
-       }
+        czyZdolnyDoPracy = false;
     }
 
     @Override
