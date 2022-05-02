@@ -1,25 +1,37 @@
 package Budowa.Pracownicy;
 
-import java.util.ArrayList;
 
-public abstract class Osoba {
+import Budowa.Exceptions.NieunikalnyPeselException;
+
+import java.util.ArrayList;
+import java.util.Collections;
+
+public abstract class Osoba implements Comparable<Osoba>{
     private String imie;
     private String nazwisko;
     private int pesel;
     private int nrTelefonu;
+    private double waga;
 
     private static ArrayList<Osoba> listaOsob = new ArrayList<>();
 
-    public Osoba(String imie, String nazwisko, int pesel, int nrTelefonu){
+    public Osoba(String imie, String nazwisko, int pesel, int nrTelefonu, double waga) throws NieunikalnyPeselException {
         this.imie = imie;
         this.nazwisko = nazwisko;
         this.nrTelefonu = nrTelefonu;
-
-       // dorobic walidacje peselu
+        this.waga = waga;
         this.pesel = pesel;
-
         listaOsob.add(this);
 
+        for (Osoba o: listaOsob) {
+
+           if(this == o){
+               System.out.println("sprawdzilem ta sama osobe");
+           }
+           else if(this.compareTo(o) ==1 ){
+             throw new NieunikalnyPeselException();
+            }
+        }
     }
 
     public String getImie() {
@@ -54,6 +66,22 @@ public abstract class Osoba {
         this.nrTelefonu = nrTelefonu;
     }
 
+    public double getWaga() {
+        return waga;
+    }
+
+    public void setWaga(double waga) {
+        this.waga = waga;
+    }
+
+    public static ArrayList<Osoba> getListaOsob() {
+        return listaOsob;
+    }
+
+    public static void setListaOsob(ArrayList<Osoba> listaOsob) {
+        Osoba.listaOsob = listaOsob;
+    }
+
     @Override
     public String toString() {
         return "Osoba{" +
@@ -62,5 +90,14 @@ public abstract class Osoba {
                 ", pesel=" + pesel +
                 ", nrTelefonu=" + nrTelefonu +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Osoba o) {
+        if(this.getPesel() == o.getPesel()){
+            return 1;
+        }
+        else
+            return 0;
     }
 }

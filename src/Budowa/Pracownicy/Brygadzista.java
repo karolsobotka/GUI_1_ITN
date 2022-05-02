@@ -1,18 +1,20 @@
 package Budowa.Pracownicy;
 
 
+import Budowa.Exceptions.NieunikalnyPeselException;
 
-public class Brygadzista extends Kopacz implements Comparable {
+public class Brygadzista extends Kopacz {
 
     private String pseudonim;
     private int dlugoscZmiany;
     private Brygada brygada;
 
-    public Brygadzista(String imie, String nazwisko, int pesel, int nrTelefonu, String pseudonim, int dlugoscZmiany, Brygada brygada) {
-        super(imie, nazwisko, pesel, nrTelefonu);
+
+    public Brygadzista(String imie, String nazwisko, int pesel, int nrTelefonu, double waga, String pseudonim, int dlugoscZmiany) throws NieunikalnyPeselException {
+        super(imie, nazwisko, pesel, nrTelefonu, waga);
         this.dlugoscZmiany = dlugoscZmiany;
         this.pseudonim = pseudonim;
-        this.brygada = brygada;
+
     }
 
     public boolean sprawdzCzyBrygadaNiezdolnaDoPracy(Brygada brygada){
@@ -28,10 +30,5 @@ public class Brygadzista extends Kopacz implements Comparable {
         return true;
     }
 
-    @Override
-    public int compareTo(Object o) {
-        if(this.getPesel() == o.getPesel())
 
-        return 0;
-    }
 }

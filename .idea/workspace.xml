@@ -1,24 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="45f18398-32a2-4489-b234-1d9ab4f1b38d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GUI_1_ITN.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Budowa/Exceptions/BrygadaNiezdolnaDoPracyException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Budowa/Exceptions/NieunikalnyPeselException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Budowa/IPracownik.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Budowa/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Budowa/Pracownicy/Architekt.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Budowa/Pracownicy/Brygada.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Budowa/Pracownicy/Brygadzista.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Budowa/Pracownicy/Kopacz.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Budowa/Pracownicy/Osoba.java" afterDir="false" />
+    <list default="true" id="45f18398-32a2-4489-b234-1d9ab4f1b38d" name="Changes" comment="Initial commit.">
+      <change afterPath="$PROJECT_DIR$/src/Budowa/Kopanie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Budowa/Exceptions/ZlamanaLopataException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Budowa/Exceptions/ZlamanaLopataException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Budowa/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Budowa/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Budowa/Pracownicy/Architekt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Budowa/Pracownicy/Architekt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Budowa/Pracownicy/Brygada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Budowa/Pracownicy/Brygada.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Budowa/Pracownicy/Brygadzista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Budowa/Pracownicy/Brygadzista.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Budowa/Pracownicy/Kopacz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Budowa/Pracownicy/Kopacz.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Budowa/Pracownicy/Osoba.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Budowa/Pracownicy/Osoba.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,8 +20,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -50,11 +42,16 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false"
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/WIN/OneDrive - Polsko-Japońska Akademia Technik Komputerowych/PJATK/ROK III/SEMESTR II/GUI ITN/Ćwiczenia/GUI_cwiczenia_2/cwiczenia_sobota"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="Budowa.Pracownicy" />
+    </key>
+    <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="Budowa.Pracownicy" />
     </key>
   </component>
@@ -86,8 +83,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1651487102276</updated>
-      <workItem from="1651487103622" duration="1729000" />
+      <workItem from="1651487103622" duration="8441000" />
     </task>
+    <task id="LOCAL-00001" summary="Initial commit.">
+      <created>1651489138336</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1651489138336</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -103,5 +108,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial commit." />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial commit." />
   </component>
 </project>

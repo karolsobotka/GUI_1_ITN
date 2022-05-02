@@ -1,28 +1,20 @@
 package Budowa.Pracownicy;
 
+import Budowa.Exceptions.NieunikalnyPeselException;
 import Budowa.IPracownik;
-
 public class Kopacz extends Osoba implements IPracownik {
 
     private int iloscMachniecLopata;
     private boolean czyZdolnyDoPracy = true;
-
-    public Kopacz(String imie, String nazwisko, int pesel, int nrTelefonu) {
-        super(imie, nazwisko, pesel, nrTelefonu);
+    public Kopacz(String imie, String nazwisko, int pesel, int nrTelefonu, double waga) throws NieunikalnyPeselException {
+        super(imie, nazwisko, pesel, nrTelefonu, waga);
     }
 
     public void kop(){
 
-        new Thread(new Runnable() {
-
-            @Override
-            public void run() {
-                System.out.println("Kopacz: "+this+" machnął łopata");
-            }
-        }).start();
     }
     public void przestanKopac(){
-        //to implement
+        this.czyZdolnyDoPracy =false;
     }
 
     @Override
@@ -49,4 +41,22 @@ public class Kopacz extends Osoba implements IPracownik {
     public void dodajSieDoBrygady() {
 
     }
+
+    public int getIloscMachniecLopata() {
+        return iloscMachniecLopata;
+    }
+
+    public void setIloscMachniecLopata(int iloscMachniecLopata) {
+        this.iloscMachniecLopata = iloscMachniecLopata;
+    }
+
+    public boolean isCzyZdolnyDoPracy() {
+        return czyZdolnyDoPracy;
+    }
+
+    public void setCzyZdolnyDoPracy(boolean czyZdolnyDoPracy) {
+        this.czyZdolnyDoPracy = czyZdolnyDoPracy;
+    }
+
+
 }

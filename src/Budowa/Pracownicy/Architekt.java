@@ -1,13 +1,16 @@
 package Budowa.Pracownicy;
 
+import Budowa.Exceptions.NieunikalnyPeselException;
 import Budowa.IPracownik;
+
 
 public class Architekt extends Osoba implements IPracownik {
 
     private String specjalizacja;
-    public Architekt(String imie, String nazwisko, int pesel, int nrTelefonu, String specjalizacja) {
-        super(imie, nazwisko, pesel, nrTelefonu);
+    public Architekt(String imie, String nazwisko, int pesel, int nrTelefonu, String specjalizacja, double waga) throws NieunikalnyPeselException {
+        super(imie, nazwisko, pesel, nrTelefonu, waga);
         this.specjalizacja = specjalizacja;
+
 
     }
 
@@ -35,4 +38,5 @@ public class Architekt extends Osoba implements IPracownik {
     public void dodajSieDoBrygady() {
 
     }
-}
+
+    }
