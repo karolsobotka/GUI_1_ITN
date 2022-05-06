@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="45f18398-32a2-4489-b234-1d9ab4f1b38d" name="Changes" comment="Created Lambda and implemented basic thred functionality.">
+    <list default="true" id="45f18398-32a2-4489-b234-1d9ab4f1b38d" name="Changes" comment="Kopacz class completed onlu Brygadista left">
+      <change afterPath="$PROJECT_DIR$/src/Budowa/Exceptions/ZaDuzoPracownikowWBrygadzieException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Budowa/Exceptions/BrygadaNiezdolnaDoPracyException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Budowa/Exceptions/BrygadaNiezdolnaDoPracyException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Budowa/IPracownik.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Budowa/IPracownik.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Budowa/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Budowa/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Budowa/Pracownicy/Architekt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Budowa/Pracownicy/Architekt.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Budowa/Pracownicy/Brygada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Budowa/Pracownicy/Brygada.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Budowa/Pracownicy/Brygadzista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Budowa/Pracownicy/Brygadzista.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Budowa/Pracownicy/Kopacz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Budowa/Pracownicy/Kopacz.java" afterDir="false" />
@@ -35,16 +37,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/WIN/OneDrive - Polsko-Japońska Akademia Technik Komputerowych/PJATK/ROK III/SEMESTR II/GUI ITN/Ćwiczenia/GUI_cwiczenia_2/cwiczenia_sobota"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/WIN/Desktop/TPO3_SK_S20439/TPO3_SK_S20439&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="Budowa.Pracownicy" />
@@ -81,7 +83,10 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1651487102276</updated>
-      <workItem from="1651487103622" duration="17882000" />
+      <workItem from="1651487103622" duration="18785000" />
+      <workItem from="1651688046867" duration="72000" />
+      <workItem from="1651688196738" duration="2018000" />
+      <workItem from="1651764623880" duration="5931000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit.">
       <created>1651489138336</created>
@@ -104,7 +109,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651506389312</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Kopacz class completed onlu Brygadista left">
+      <created>1651509234126</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1651509234126</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -125,6 +137,7 @@
     <MESSAGE value="Initial commit." />
     <MESSAGE value="PESEL verification completed." />
     <MESSAGE value="Created Lambda and implemented basic thred functionality." />
-    <option name="LAST_COMMIT_MESSAGE" value="Created Lambda and implemented basic thred functionality." />
+    <MESSAGE value="Kopacz class completed onlu Brygadista left" />
+    <option name="LAST_COMMIT_MESSAGE" value="Kopacz class completed onlu Brygadista left" />
   </component>
 </project>

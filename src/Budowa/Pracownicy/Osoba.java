@@ -36,48 +36,12 @@ public abstract class Osoba implements Comparable<Osoba>{
         return imie;
     }
 
-    public void setImie(String imie) {
-        this.imie = imie;
-    }
-
     public String getNazwisko() {
         return nazwisko;
     }
 
-    public void setNazwisko(String nazwisko) {
-        this.nazwisko = nazwisko;
-    }
-
     public int getPesel() {
         return pesel;
-    }
-
-    public void setPesel(int pesel) {
-        this.pesel = pesel;
-    }
-
-    public int getNrTelefonu() {
-        return nrTelefonu;
-    }
-
-    public void setNrTelefonu(int nrTelefonu) {
-        this.nrTelefonu = nrTelefonu;
-    }
-
-    public double getWaga() {
-        return waga;
-    }
-
-    public void setWaga(double waga) {
-        this.waga = waga;
-    }
-
-    public static ArrayList<Osoba> getListaOsob() {
-        return listaOsob;
-    }
-
-    public static void setListaOsob(ArrayList<Osoba> listaOsob) {
-        Osoba.listaOsob = listaOsob;
     }
 
     @Override

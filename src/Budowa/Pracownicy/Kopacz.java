@@ -1,6 +1,7 @@
 package Budowa.Pracownicy;
 
 import Budowa.Exceptions.NieunikalnyPeselException;
+import Budowa.Exceptions.ZaDuzoPracownikowWBrygadzieException;
 import Budowa.Exceptions.ZlamanaLopataException;
 import Budowa.IPracownik;
 
@@ -9,12 +10,14 @@ public class Kopacz extends Osoba implements IPracownik {
     private int iloscMachniecLopata;
     private Thread kopanieThread;
     private boolean czyZdolnyDoPracy = true;
+
     public Kopacz(String imie, String nazwisko, int pesel, int nrTelefonu, double waga) throws NieunikalnyPeselException {
         super(imie, nazwisko, pesel, nrTelefonu, waga);
     }
 
     // LAMBDA
     Runnable runnable = () -> {
+        Brygada brygadKopacza = findBrygadaKopacza();
 
         while(czyZdolnyDoPracy){
 
@@ -28,11 +31,11 @@ public class Kopacz extends Osoba implements IPracownik {
                         }
                     }else {
                         iloscMachniecLopata = (int) (Math.random() * 10) +5;
-                        System.out.println("Kopacz "+this.getImie()+" "+this.getNazwisko()+" machnal lopata "+iloscMachniecLopata+" razy");
-                        Brygada.iloscMachniecLopataBrygady++;
-                        System.out.println("Brygada kopala juz tyle razy: "+Brygada.iloscMachniecLopataBrygady);
+                        powiedzIleRazyKopales();
+                        brygadKopacza.iloscMachniecLopataBrygady++;
+                        System.out.println("Brygada kopala juz tyle razy: "+ brygadKopacza.iloscMachniecLopataBrygady);
                         try {
-                            kopanieThread.sleep( (int) (Math.random() * 1000) );
+                            kopanieThread.sleep( (int) (Math.random() * 5000) );
                         } catch (InterruptedException e) {
                             throw new RuntimeException(e);
                         }
@@ -51,14 +54,23 @@ public class Kopacz extends Osoba implements IPracownik {
 
     public synchronized void kop(){
         kopanieThread = new Thread(runnable);
-
         kopanieThread.start();
 
 
     }
 
+    private Brygada findBrygadaKopacza(){
+        Brygada brygadaKopacza;
+        for (Brygada brygada : Brygada.getListaBrygad()) {
+             if(brygada.getPracownicy().contains(this)){
+                 return brygada;
+             }
+        }
+            return null;
+    }
+
     public void przestanKopac(){
-        czyZdolnyDoPracy = false;
+        this.czyZdolnyDoPracy = false;
     }
 
     @Override
@@ -68,7 +80,7 @@ public class Kopacz extends Osoba implements IPracownik {
 
     @Override
     public void powiedzIleRazyKopales() {
-        System.out.println("Czesc, kopalem "+iloscMachniecLopata+ " razy.");
+        System.out.println("Czesc, ja: "+this.getImie()+" "+this.getNazwisko()+" kopalem "+iloscMachniecLopata+ " razy.");
     }
 
     @Override
@@ -78,31 +90,13 @@ public class Kopacz extends Osoba implements IPracownik {
 
     @Override
     public void zakonczDzialanie() {
-
+        kopanieThread.interrupt();
     }
 
     @Override
-    public void dodajSieDoBrygady(Brygada brygada) {
+    public void dodajSieDoBrygady(Brygada brygada) throws ZaDuzoPracownikowWBrygadzieException {
         brygada.dodajPracownika(this);
     }
-
-    public int getIloscMachniecLopata() {
-        return iloscMachniecLopata;
-    }
-
-    public void setIloscMachniecLopata(int iloscMachniecLopata) {
-        this.iloscMachniecLopata = iloscMachniecLopata;
-    }
-
-    public boolean isCzyZdolnyDoPracy() {
-        return czyZdolnyDoPracy;
-    }
-
-    public void setCzyZdolnyDoPracy(boolean czyZdolnyDoPracy) {
-        this.czyZdolnyDoPracy = czyZdolnyDoPracy;
-    }
-
-
     @Override
     public String toString() {
         return super.toString()+"Kopacz{" +

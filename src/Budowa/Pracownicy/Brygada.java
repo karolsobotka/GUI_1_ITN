@@ -1,18 +1,22 @@
 package Budowa.Pracownicy;
 
+import Budowa.Exceptions.ZaDuzoPracownikowWBrygadzieException;
+
 import java.util.ArrayList;
 
 public class Brygada {
-    private static Brygadzista brygadzista;
-    private static ArrayList<Osoba> pracownicy;
-    private static int maksymalnaIloscPracownikow;
-    public static int iloscMachniecLopataBrygady;
+    private  Brygadzista brygadzista;
+    private  ArrayList<Osoba> pracownicy;
+    private  int maksymalnaIloscPracownikow;
+    public  int iloscMachniecLopataBrygady;
 
+    private static ArrayList<Brygada> listaBrygad = new ArrayList<>();
 
     public Brygada(Brygadzista brygadzista, ArrayList<Osoba> pracownicy, int maksymalnaIloscPracownikow) {
         this.brygadzista = brygadzista;
         this.pracownicy = pracownicy;
         this.maksymalnaIloscPracownikow = maksymalnaIloscPracownikow;
+        listaBrygad.add(this);
     }
 
     public int ileArchitektow(){
@@ -32,9 +36,9 @@ public class Brygada {
         else
             return false;
     }
-    public void dodajPracownika(Osoba o){
+    public void dodajPracownika(Osoba o) throws ZaDuzoPracownikowWBrygadzieException {
         if(czyPelnaBrygada()){
-            System.out.println("Za duzo pracownikow, nie mozna dodac");
+            throw new ZaDuzoPracownikowWBrygadzieException();
         }
         else
             pracownicy.add(o);
@@ -50,37 +54,20 @@ public class Brygada {
             }
         }
     }
-
-    public void setBrygadzista(Brygadzista brygadzista) {
+    public void setBrygadzista(Brygadzista brygadzista)  {
         this.brygadzista = brygadzista;
-    }
 
+    }
     public Brygadzista getBrygadzista() {
         return brygadzista;
     }
 
-    public static ArrayList<Osoba> getPracownicy() {
+    public  ArrayList<Osoba> getPracownicy() {
         return pracownicy;
     }
 
-    public void setPracownicy(ArrayList<Osoba> pracownicy) {
-        this.pracownicy = pracownicy;
-    }
-
-    public static int getMaksymalnaIloscPracownikow() {
-        return maksymalnaIloscPracownikow;
-    }
-
-    public void setMaksymalnaIloscPracownikow(int maksymalnaIloscPracownikow) {
-        this.maksymalnaIloscPracownikow = maksymalnaIloscPracownikow;
-    }
-
-    public static int getIloscMachniecLopataBrygady() {
-        return iloscMachniecLopataBrygady;
-    }
-
-    public void setIloscMachniecLopataBrygady(int iloscMachniecLopataBrygady) {
-        this.iloscMachniecLopataBrygady = iloscMachniecLopataBrygady;
+    public static ArrayList<Brygada> getListaBrygad() {
+        return listaBrygad;
     }
 
     @Override

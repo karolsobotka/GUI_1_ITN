@@ -1,7 +1,9 @@
 package Budowa.Pracownicy;
 
 import Budowa.Exceptions.NieunikalnyPeselException;
+import Budowa.Exceptions.ZaDuzoPracownikowWBrygadzieException;
 import Budowa.IPracownik;
+import jdk.jshell.spi.ExecutionControl;
 
 
 public class Architekt extends Osoba implements IPracownik {
@@ -30,12 +32,12 @@ public class Architekt extends Osoba implements IPracownik {
     }
 
     @Override
-    public void zakonczDzialanie() {
-
+    public void zakonczDzialanie() throws ExecutionControl.NotImplementedException {
+        throw new ExecutionControl.NotImplementedException("not implemented");
     }
 
     @Override
-    public void dodajSieDoBrygady(Brygada brygada) {
+    public void dodajSieDoBrygady(Brygada brygada) throws ZaDuzoPracownikowWBrygadzieException {
         brygada.dodajPracownika(this);
     }
 
